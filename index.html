@@ -5,7 +5,6 @@
     <title>TOTEM – Галерея природы и искусства</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Шрифт -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
 
     <style>
@@ -86,32 +85,26 @@
             color: var(--text-muted);
         }
 
-        /* Логотип и обертка */
-
-        .logo-row {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 8px;
-        }
-
-        .logo-text {
-            font-size: 1.2rem;
-            font-weight: 600;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--accent-ochre);
-        }
+        /* Хиро */
 
         .hero {
             display: grid;
             grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
             gap: 32px;
             align-items: center;
-            padding: 24px 20px;
+            padding: 28px 22px;
             border-radius: 24px;
             background: linear-gradient(135deg, #e3f0e5 0%, #f5f1ed 40%, #f4e7d2 100%);
             margin-bottom: 32px;
+        }
+
+        .hero-logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--accent-ochre);
+            margin-bottom: 10px;
         }
 
         .hero-tag {
@@ -142,20 +135,13 @@
         }
 
         .hero-tab-button {
-            padding: 8px 16px;
+            padding: 8px 18px;
             border-radius: 999px;
             border: 1px solid transparent;
             font-size: 0.9rem;
             cursor: pointer;
             background: rgba(255,255,255,0.7);
             color: var(--text-muted);
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .hero-tab-button span.icon {
-            font-size: 1.1rem;
         }
 
         .hero-tab-button:hover {
@@ -234,14 +220,10 @@
 <body>
 <div class="page">
 
-    <!-- Логотип -->
-    <div class="logo-row">
-        <div class="logo-text">TOTEM</div>
-    </div>
-
     <!-- Хиро -->
     <header class="hero">
         <div>
+            <div class="hero-logo">TOTEM</div>
             <div class="hero-tag">Экодомики Уркуста-парк • Байдарская долина</div>
             <h1>Галерея природы и искусства</h1>
             <p class="hero-subtitle">
@@ -249,32 +231,16 @@
                 встречаются, чтобы напомнить: все живое связано.
             </p>
 
-            <!-- Вкладки внизу хиро -->
+            <!-- Вкладки внизу хиро, одна линия -->
             <div class="hero-tabs-row">
-                <button class="hero-tab-button active" data-tab-link="about">
-                    <span class="icon">❊</span><span>О проекте</span>
-                </button>
-                <button class="hero-tab-button" data-tab-link="guests">
-                    <span class="icon">🏡🌳</span><span>Для гостей</span>
-                </button>
-                <button class="hero-tab-button" data-tab-link="contemplation">
-                    <span class="icon">👁️</span><span>Созерцая искусство</span>
-                </button>
-                <button class="hero-tab-button" data-tab-link="urkusta">
-                    <span class="icon">🏡🌳</span><span>Экодомики</span>
-                </button>
-                <button class="hero-tab-button" data-tab-link="sessions">
-                    <span class="icon">🌀</span><span>Тотемные сессии</span>
-                </button>
-                <button class="hero-tab-button" data-tab-link="online">
-                    <span class="icon">📲</span><span>Онлайн галерея</span>
-                </button>
-                <button class="hero-tab-button" data-tab-link="support">
-                    <span class="icon">🍃</span><span>Как поддержать</span>
-                </button>
-                <button class="hero-tab-button" data-tab-link="contact">
-                    <span class="icon">✉️</span><span>Контакты</span>
-                </button>
+                <button class="hero-tab-button active" data-tab-link="about">О проекте</button>
+                <button class="hero-tab-button" data-tab-link="guests">Для гостей</button>
+                <button class="hero-tab-button" data-tab-link="contemplation">Созерцая искусство</button>
+                <button class="hero-tab-button" data-tab-link="urkusta">Экодомики</button>
+                <button class="hero-tab-button" data-tab-link="sessions">Тотемные сессии</button>
+                <button class="hero-tab-button" data-tab-link="online">Онлайн галерея</button>
+                <button class="hero-tab-button" data-tab-link="support">Как поддержать</button>
+                <button class="hero-tab-button" data-tab-link="contact">Контакты</button>
             </div>
         </div>
         <div class="hero-photo">
@@ -355,12 +321,11 @@
                 </div>
             </div>
             <p class="footer-note">
-                Фото экодомика на этой странице – вид из Уркуста-парк: современный модульный домик с панорамными окнами
-                на фоне зеленой травы и деревьев Байдарской долины.
+                Адрес и детали отдыха – на странице Уркуста-парк во ВКонтакте:
+                <a href="https://vk.com/urkusta_park" target="_blank" rel="noopener noreferrer">
+                    vk.com/urkusta_park
+                </a>.
             </p>
-            <a href="https://vk.com/urkusta_park" class="btn-link" target="_blank" rel="noopener noreferrer">
-                Страница Уркуста-парк во ВКонтакте
-            </a>
         </div>
     </section>
 
@@ -376,8 +341,8 @@
             <li>инструменты: образы картин, ассоциации, маленькие арт практики, телесные и дыхательные техники;</li>
             <li>кому подходит: при тревоге, выгорании, в период изменений, когда нужна мягкая, экологичная поддержка.</li>
         </ul>
-        <button class="hero-tab-button active" data-tab-link="contact">
-            <span class="icon">✉️</span><span>Записаться на сессию</span>
+        <button class="hero-tab-button" data-tab-link="contact">
+            Записаться на сессию
         </button>
     </section>
 
@@ -419,7 +384,7 @@
             Напишите, если хотите забронировать выставку, приехать в домики или заполнить заявку на тотемную сессию.
         </p>
         <p>
-            Уркуста-парк во ВКонтакте: 
+            Уркуста-парк во ВКонтакте:
             <a href="https://vk.com/urkusta_park" target="_blank" rel="noopener noreferrer">
                 vk.com/urkusta_park
             </a>
