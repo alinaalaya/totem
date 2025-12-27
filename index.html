@@ -77,7 +77,7 @@
             color: var(--text-muted);
         }
 
-        /* Верхнее меню */
+        /* Верхняя панель */
 
         .top-bar {
             display: flex;
@@ -119,45 +119,6 @@
             border-color: var(--accent-green);
         }
 
-        .btn-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 20px;
-        }
-
-        .btn {
-            padding: 10px 22px;
-            border-radius: 999px;
-            border: 1px solid transparent;
-            font-size: 0.97rem;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            line-height: 1.3;
-        }
-
-        .btn-primary {
-            background: var(--accent-green);
-            color: #ffffff;
-        }
-
-        .btn-primary:hover {
-            background: #58751c;
-        }
-
-        .btn-outline {
-            background: transparent;
-            border-color: var(--accent-ochre);
-            color: var(--accent-ochre);
-        }
-
-        .btn-outline:hover {
-            background: rgba(184,134,11,0.08);
-        }
-
         .hero {
             display: grid;
             grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
@@ -187,6 +148,32 @@
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 16px 40px rgba(0,0,0,0.18);
+        }
+
+        .hero-tabs-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 22px;
+        }
+
+        .hero-tab-button {
+            padding: 8px 14px;
+            border-radius: 999px;
+            border: 1px solid transparent;
+            font-size: 0.9rem;
+            cursor: pointer;
+            background: rgba(255,255,255,0.7);
+            color: var(--text-muted);
+        }
+
+        .hero-tab-button:hover {
+            border-color: var(--accent-green);
+        }
+
+        .hero-tab-button.active {
+            background: var(--accent-green);
+            color: #ffffff;
         }
 
         .section-soft {
@@ -267,7 +254,7 @@
 <body>
 <div class="page">
 
-    <!-- Верхняя панель и меню -->
+    <!-- Верхняя панель -->
     <div class="top-bar">
         <div class="logo">TOTEM</div>
         <nav class="nav">
@@ -275,7 +262,7 @@
             <button class="nav-button" data-tab="guests">Для гостей</button>
             <button class="nav-button" data-tab="contemplation">Созерцая искусство</button>
             <button class="nav-button" data-tab="urkusta">Экодомики</button>
-            <button class="nav-button" data-tab="sessions">Сессии</button>
+            <button class="nav-button" data-tab="sessions">Тотемные сессии</button>
             <button class="nav-button" data-tab="online">Онлайн галерея</button>
             <button class="nav-button" data-tab="support">Как поддержать</button>
             <button class="nav-button" data-tab="contact">Контакты</button>
@@ -291,9 +278,17 @@
                 Живая галерея в экодомиках и онлайн пространстве, где искусство, природа и психология
                 встречаются, чтобы напомнить: все живое связано.
             </p>
-            <div class="btn-row">
-                <button class="btn btn-primary" data-tab-link="guests">Для гостей</button>
-                <button class="btn btn-outline" data-tab-link="sessions">Тотемные сессии</button>
+
+            <!-- Вкладки внизу хиро -->
+            <div class="hero-tabs-row">
+                <button class="hero-tab-button active" data-tab-link="about">О проекте</button>
+                <button class="hero-tab-button" data-tab-link="guests">Для гостей</button>
+                <button class="hero-tab-button" data-tab-link="contemplation">Созерцая искусство</button>
+                <button class="hero-tab-button" data-tab-link="urkusta">Экодомики</button>
+                <button class="hero-tab-button" data-tab-link="sessions">Тотемные сессии</button>
+                <button class="hero-tab-button" data-tab-link="online">Онлайн галерея</button>
+                <button class="hero-tab-button" data-tab-link="support">Как поддержать</button>
+                <button class="hero-tab-button" data-tab-link="contact">Контакты</button>
             </div>
         </div>
         <div class="hero-photo">
@@ -381,7 +376,7 @@
         </div>
     </section>
 
-    <!-- Вкладка СЕССИИ -->
+    <!-- Вкладка ТОТЕМНЫЕ СЕССИИ -->
     <section id="tab-sessions" class="tab">
         <h2><span class="icon">🌀</span>Тотемные сессии: психология и природа</h2>
         <p>
@@ -393,7 +388,7 @@
             <li>инструменты: образы картин, ассоциации, маленькие арт практики, телесные и дыхательные техники;</li>
             <li>кому подходит: при тревоге, выгорании, в период изменений, когда нужна мягкая, экологичная поддержка.</li>
         </ul>
-        <a href="#tab-contact" class="btn btn-primary" data-tab-link="contact">Записаться на сессию</a>
+        <button class="btn btn-primary" data-tab-link="contact">Записаться на сессию</button>
     </section>
 
     <!-- Вкладка ОНЛАЙН ГАЛЕРЕЯ -->
@@ -430,9 +425,7 @@
             <li>приехать в Уркуста парк и пожить в галерее природы;</li>
             <li>поделиться проектом в социальных сетях или пригласить художника, которому это созвучно.</li>
         </ul>
-        <div class="btn-row">
-            <button class="btn btn-primary" data-tab-link="contact">Поддержать проект</button>
-        </div>
+        <button class="btn btn-primary" data-tab-link="contact">Поддержать проект</button>
     </section>
 
     <!-- Вкладка КОНТАКТЫ -->
@@ -449,33 +442,30 @@
 </div>
 
 <script>
-    // Переключение вкладок по кнопкам меню
     const navButtons = document.querySelectorAll(".nav-button");
+    const heroTabButtons = document.querySelectorAll(".hero-tab-button");
     const tabs = document.querySelectorAll(".tab");
 
     function showTab(name) {
-        tabs.forEach(t => {
-            t.classList.toggle("active", t.id === "tab-" + name);
-        });
-        navButtons.forEach(b => {
-            b.classList.toggle("active", b.dataset.tab === name);
-        });
-        // прокрутка наверх страницы при смене вкладки
+        tabs.forEach(t => t.classList.toggle("active", t.id === "tab-" + name));
+        navButtons.forEach(b => b.classList.toggle("active", b.dataset.tab === name));
+        heroTabButtons.forEach(b => b.classList.toggle("active", b.dataset.tabLink === name));
         window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
     navButtons.forEach(button => {
-        button.addEventListener("click", () => {
-            showTab(button.dataset.tab);
-        });
+        button.addEventListener("click", () => showTab(button.dataset.tab));
     });
 
-    // Кнопки внутри контента, которые ведут на вкладки
+    heroTabButtons.forEach(button => {
+        button.addEventListener("click", () => showTab(button.dataset.tabLink));
+    });
+
     document.querySelectorAll("[data-tab-link]").forEach(el => {
         el.addEventListener("click", (e) => {
+            if (el.classList.contains("hero-tab-button")) return;
             e.preventDefault();
-            const target = el.dataset.tabLink;
-            showTab(target);
+            showTab(el.dataset.tabLink);
         });
     });
 </script>
